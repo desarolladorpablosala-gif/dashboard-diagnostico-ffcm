@@ -21,7 +21,6 @@ import {
   Users, 
   Briefcase, 
   ShieldCheck, 
-  BrainCircuit, 
   FileText, 
   Sparkles, 
   ChevronRight,
@@ -249,10 +248,7 @@ export default function App() {
       {/* HEADER CORPORATIVO */}
       <header className="bg-white border-b border-slate-200 sticky top-0 z-40 shadow-sm transition-all-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-          <div className="flex items-center gap-4">
-            <div className="bg-ffcm-red/10 p-2.5 rounded-xl border border-ffcm-red/20 shadow-inner">
-              <BrainCircuit className="w-8 height-8 text-ffcm-red animate-pulse" />
-            </div>
+          <div className="flex items-center gap-2">
             <div>
               <h1 className="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight">
                 Curso IA FFCM <span className="text-pablo-blue font-semibold font-sans">(Pablo Sala)</span>
@@ -290,7 +286,7 @@ export default function App() {
         <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           
           {/* Competencia en IA */}
-          <div className="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md transition-all-200 relative overflow-hidden group">
+          <div className="bg-white p-6 rounded-2xl border border-slate-200/80 border-t-4 border-t-ffcm-red shadow-sm hover:shadow-md transition-all-200 relative overflow-hidden group">
             <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-ffcm-red/5 to-transparent rounded-bl-full transition-all group-hover:scale-110"></div>
             <div className="flex items-center justify-between mb-4">
               <div className="p-2 bg-ffcm-red/10 rounded-xl text-ffcm-red">
@@ -318,7 +314,7 @@ export default function App() {
           </div>
 
           {/* Frecuencia de Uso */}
-          <div className="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md transition-all-200 relative overflow-hidden group">
+          <div className="bg-white p-6 rounded-2xl border border-slate-200/80 border-t-4 border-t-pablo-blue shadow-sm hover:shadow-md transition-all-200 relative overflow-hidden group">
             <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-pablo-blue/5 to-transparent rounded-bl-full transition-all group-hover:scale-110"></div>
             <div className="flex items-center justify-between mb-4">
               <div className="p-2 bg-pablo-blue/10 rounded-xl text-pablo-blue">
@@ -344,7 +340,7 @@ export default function App() {
           </div>
 
           {/* Habilidad Clave: NotebookLM */}
-          <div className="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md transition-all-200 relative overflow-hidden group">
+          <div className="bg-white p-6 rounded-2xl border border-slate-200/80 border-t-4 border-t-ffcm-gold shadow-sm hover:shadow-md transition-all-200 relative overflow-hidden group">
             <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-ffcm-gold/5 to-transparent rounded-bl-full transition-all group-hover:scale-110"></div>
             <div className="flex items-center justify-between mb-4">
               <div className="p-2 bg-ffcm-gold/10 rounded-xl text-ffcm-gold">
@@ -372,7 +368,7 @@ export default function App() {
           </div>
 
           {/* Habilidad Clave: Seguridad */}
-          <div className="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md transition-all-200 relative overflow-hidden group">
+          <div className="bg-white p-6 rounded-2xl border border-slate-200/80 border-t-4 border-t-teal-500 shadow-sm hover:shadow-md transition-all-200 relative overflow-hidden group">
             <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-teal-500/5 to-transparent rounded-bl-full transition-all group-hover:scale-110"></div>
             <div className="flex items-center justify-between mb-4">
               <div className="p-2 bg-teal-50 rounded-xl text-teal-600">
@@ -402,7 +398,7 @@ export default function App() {
         </section>
 
         {/* CONTROLES Y FILTROS INTERACTIVOS */}
-        <section className="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-6 transition-all-200">
+        <section className="bg-white p-6 rounded-2xl border border-slate-200/80 border-l-4 border-l-ffcm-red shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-6 transition-all-200">
           
           <div className="flex flex-col md:flex-row items-stretch md:items-center gap-4 flex-1">
             {/* Filtro Departamento */}
@@ -464,7 +460,7 @@ export default function App() {
                 onClick={() => setChartMode('superpuesto')}
                 className={`py-2 px-4 rounded-lg font-bold text-xs transition-all ${
                   chartMode === 'superpuesto' 
-                    ? 'bg-white text-slate-900 shadow-sm' 
+                    ? 'bg-ffcm-red text-white shadow-sm' 
                     : 'text-slate-500 hover:text-slate-800'
                 }`}
               >
@@ -474,7 +470,7 @@ export default function App() {
                 onClick={() => setChartMode('inicio')}
                 className={`py-2 px-4 rounded-lg font-bold text-xs transition-all ${
                   chartMode === 'inicio' 
-                    ? 'bg-slate-300 text-slate-900 shadow-sm' 
+                    ? 'bg-slate-700 text-white shadow-sm' 
                     : 'text-slate-500 hover:text-slate-800'
                 }`}
               >
@@ -499,7 +495,7 @@ export default function App() {
         <section className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           
           {/* COLUMNA IZQUIERDA: DIAGRAMA DE HABILIDADES (12 / 5 o 7 de ancho) */}
-          <div className="lg:col-span-7 bg-white p-6 rounded-3xl border border-slate-200/80 shadow-sm flex flex-col gap-6">
+          <div className="lg:col-span-7 bg-white p-6 rounded-3xl border border-slate-200/80 border-t-4 border-t-ffcm-red shadow-sm flex flex-col gap-6">
             <div className="flex items-center justify-between border-b border-slate-100 pb-4">
               <div>
                 <h3 className="text-lg font-extrabold text-slate-900">Diagrama de Habilidades en IA</h3>
@@ -589,7 +585,7 @@ export default function App() {
           </div>
 
           {/* COLUMNA DERECHA: FICHA DETALLADA / COMENTARIOS Y ACTITUDES (5 de ancho) */}
-          <div className="lg:col-span-5 bg-white p-6 rounded-3xl border border-slate-200/80 shadow-sm flex flex-col gap-6">
+          <div className="lg:col-span-5 bg-white p-6 rounded-3xl border border-slate-200/80 border-t-4 border-t-ffcm-gold shadow-sm flex flex-col gap-6">
             <div className="flex items-center justify-between border-b border-slate-100 pb-4">
               <div>
                 <h3 className="text-lg font-extrabold text-slate-900">
@@ -744,7 +740,7 @@ export default function App() {
         </section>
 
         {/* SECCIÓN INFERIOR: TABLA DE COMENTARIOS DESTACADOS */}
-        <section className="bg-white p-6 rounded-3xl border border-slate-200/80 shadow-sm">
+        <section className="bg-white p-6 rounded-3xl border border-slate-200/80 border-t-4 border-t-ffcm-red shadow-sm">
           <div className="flex items-center justify-between border-b border-slate-100 pb-4 mb-6">
             <div>
               <h3 className="text-lg font-extrabold text-slate-900">Opiniones y Cambios Reales en el Trabajo</h3>
@@ -788,30 +784,30 @@ export default function App() {
         </section>
 
         {/* CASOS DE ÉXITO DE ESTE CURSO */}
-        <section className="bg-gradient-to-r from-ffcm-red to-[#A00D24] text-white p-8 rounded-3xl shadow-xl flex flex-col md:flex-row items-center justify-between gap-8">
+        <section className="bg-red-50 border border-red-200/60 p-8 rounded-3xl shadow-sm flex flex-col md:flex-row items-center justify-between gap-8">
           <div className="max-w-2xl flex flex-col gap-3">
-            <div className="bg-white/10 px-3.5 py-1 rounded-full text-xs font-bold text-ffcm-gold border border-white/10 self-start">
+            <div className="bg-ffcm-red/10 px-3.5 py-1 rounded-full text-xs font-extrabold text-ffcm-red border border-ffcm-red/20 self-start">
               Conclusiones del Curso
             </div>
-            <h3 className="text-xl sm:text-2xl font-black tracking-tight">
+            <h3 className="text-xl sm:text-2xl font-black tracking-tight text-slate-900">
               Un paso de gigante en la digitalización de la FFCM
             </h3>
-            <p className="text-xs sm:text-sm text-slate-200/90 leading-relaxed">
+            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
               Los datos demuestran un salto cuantitativo y cualitativo. Hemos pasado de un desconocimiento generalizado en áreas clave (promedios previos inferiores a 2.0 en NotebookLM, GPTs y mini apps) a que los trabajadores de la federación diseñen sus propios asistentes y semiautomaticen su trabajo diario, con un **incremento general del +66% en competencias tecnológicas**.
             </p>
           </div>
-          <div className="grid grid-cols-3 gap-6 bg-black/15 p-6 rounded-2xl border border-white/5 text-center min-w-[280px]">
+          <div className="grid grid-cols-3 gap-6 bg-white p-6 rounded-2xl border border-red-100/60 text-center min-w-[280px] shadow-sm">
             <div>
-              <span className="block text-2xl font-extrabold text-ffcm-gold">+131%</span>
-              <span className="text-[10px] text-slate-300 font-bold uppercase mt-1 block">NotebookLM</span>
+              <span className="block text-2xl font-black text-ffcm-red">+131%</span>
+              <span className="text-[10px] text-slate-500 font-extrabold uppercase mt-1 block">NotebookLM</span>
             </div>
             <div>
-              <span className="block text-2xl font-extrabold text-ffcm-gold">+106%</span>
-              <span className="text-[10px] text-slate-300 font-bold uppercase mt-1 block">GPTs Propios</span>
+              <span className="block text-2xl font-black text-ffcm-red">+106%</span>
+              <span className="text-[10px] text-slate-500 font-extrabold uppercase mt-1 block">GPTs Propios</span>
             </div>
             <div>
-              <span className="block text-2xl font-extrabold text-ffcm-gold">+94%</span>
-              <span className="text-[10px] text-slate-300 font-bold uppercase mt-1 block">Mini Apps</span>
+              <span className="block text-2xl font-black text-ffcm-red">+94%</span>
+              <span className="text-[10px] text-slate-500 font-extrabold uppercase mt-1 block">Mini Apps</span>
             </div>
           </div>
         </section>
